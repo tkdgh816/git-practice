@@ -15,7 +15,7 @@ public class Todo {
     }
 
     public void setTitle(String title) {
-        if(title.isBlank()){
+        if (title.isBlank()) {
             throw new IllegalArgumentException("빈 제목은 입력할 수 없습니다.");
         }
 

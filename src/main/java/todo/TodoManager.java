@@ -5,14 +5,13 @@ import java.util.TreeMap;
 public class TodoManager {
     private final TreeMap<Integer, Todo> todoMap = new TreeMap<>();
 
-    public Todo add(String title) {
-        int id = 1;
-        if (!todoMap.isEmpty()) {
-            id = todoMap.lastKey() + 1;
-        }
-        Todo todo = new Todo(id, title);
+    private int nextId = 1;
 
-        todoMap.put(id, todo);
+    public Todo add(String title) {
+        Todo todo = new Todo(nextId, title);
+        todoMap.put(nextId, todo);
+
+        nextId++;
         return todo;
     }
 }
